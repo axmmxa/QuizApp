@@ -63,9 +63,16 @@ function showQuestion() {
         document.getElementById('amount-of-right-questions').innerHTML = rightQuestions
 
         document.getElementById('header-image').src = 'img/win.jpg'
-    }else {
 
+        document.getElementById('progress-bar').innerHTML = `100%`
+        document.getElementById('progress-bar').style.width = `100%`
+    }else {  // show next question 
+ 
+    let percent = currentQuestion / questions.length *100
+    document.getElementById('progress-bar').innerHTML = `${percent}%`
+    document.getElementById('progress-bar').style.width = `${percent}%`
 
+    console.log(percent)    
 
     let question = questions[currentQuestion]
     // show question
@@ -96,7 +103,7 @@ function answer(selection) {            // Answere right or wrong
         rightQuestions++
         
 
-    } else { // show next question
+    } else { 
         console.log("falsche Antwort")
         document.getElementById(selection).classList.add('bg-danger')
         document.getElementById(ifOfRightAnswer).classList.add('bg-success')

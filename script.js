@@ -96,7 +96,7 @@ function answer(selection) {            // Answere right or wrong
         rightQuestions++
         
 
-    } else {
+    } else { // show next question
         console.log("falsche Antwort")
         document.getElementById(selection).classList.add('bg-danger')
         document.getElementById(ifOfRightAnswer).classList.add('bg-success')
